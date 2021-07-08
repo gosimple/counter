@@ -4,6 +4,7 @@ import "sync/atomic"
 
 type UnsignedCounter uint64
 
+// NewUnsigned returns counter as uint64
 func NewUnsigned() *UnsignedCounter {
 	return new(UnsignedCounter)
 }
