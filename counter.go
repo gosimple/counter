@@ -4,6 +4,7 @@ import "sync/atomic"
 
 type Counter int64
 
+// New returns counter as int64
 func New() *Counter {
 	return new(Counter)
 }
