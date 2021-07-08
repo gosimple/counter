@@ -36,7 +36,11 @@ func (c *Counter) Subtract(val int64) int64 {
 }
 
 func (c *Counter) Set(v int64) {
-	atomic.StoreInt64((*int64)(c), v)
+	if v >= 0 {
+		atomic.StoreInt64((*int64)(c), v)
+	} else {
+		atomic.StoreInt64((*int64)(c), 0)
+	}
 }
 
 func (c *Counter) Get() int64 {
