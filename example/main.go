@@ -4,11 +4,10 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/Avalanche-io/counter"
+	"github.com/gosimple/counter"
 )
 
 func main() {
-
 	c := counter.New()
 	var wg sync.WaitGroup
 	for i := 0; i < 8; i++ {
@@ -23,5 +22,4 @@ func main() {
 	wg.Wait()
 
 	fmt.Printf("c = %d\n", c.Get())
-
 }
