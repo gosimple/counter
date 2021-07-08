@@ -1,5 +1,11 @@
-# Golang Package "counter"
-Package "counter" is a simple thread-safe atomic counter. It is basically just a wrapper of convenience functions around "sync/atomic" compare and swap operations (CAS) for `uint64`.
+# counter
+
+Package `counter` is a simple thread-safe atomic counter. It is basically just
+a wrapper of convenience functions around "sync/atomic" compare and swap
+operations (CAS) for `uint64` and `int64` (without ability to go into negative
+numbers).
+
+Fork of <https://github.com/Avalanche-io/counter>
 
 ## Example
 
@@ -10,7 +16,7 @@ import (
     "fmt"
     "sync"
 
-    "github.com/Avalanche-io/counter"
+    "github.com/gosimple/counter"
 )
 
 func main() {
@@ -43,12 +49,12 @@ output: `c = 80000`
 
 - `Down() uint64` - Subtract 1
 
-- `Subtract(val uint64) uint64` - Subtract val from the counter and return the total. If the value would be blow zero then then the counter is set to zero and zero is returned.
+- `Subtract(val uint64) uint64` - Subtract val from the counter and return
+  the total. If the value would be below zero then then the counter is set
+  to zero and zero is returned.
 
 - `Set(val uint64)` - Set the counter to val.
 
 - `Get() uint64` - Get the value.
 
-All methods are tread-safe non-blocking operations on the underlying uint64. 
-
-
+All methods are tread-safe non-blocking operations on the underlying uint64.
