@@ -1,5 +1,8 @@
 # counter
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/gosimple/counter.svg)](https://pkg.go.dev/github.com/gosimple/counter)
+[![Tests](https://github.com/gosimple/counter/actions/workflows/tests.yml/badge.svg)](https://github.com/gosimple/counter/actions/workflows/tests.yml)
+
 Package `counter` is a simple thread-safe atomic counter. It is basically just
 a wrapper of convenience functions around "sync/atomic" compare and swap
 operations (CAS) for `uint64` and `int64` (without ability to go into negative
